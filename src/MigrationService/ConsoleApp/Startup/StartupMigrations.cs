@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Npgsql;
 
-namespace MigrationService.Startup;
+namespace ConsoleApp.Startup;
 
 public static class StartupMigrations
 {

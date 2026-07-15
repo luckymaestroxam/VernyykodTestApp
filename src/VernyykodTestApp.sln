@@ -2,7 +2,17 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MigrationService", "MigrationService", "{09B88470-F721-41A7-825F-6916CC5AA997}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigrationService", "MigrationService\MigrationService\MigrationService.csproj", "{D96648EA-CFA1-430A-B2F0-0071A2877808}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "MigrationService\ConsoleApp\ConsoleApp.csproj", "{D96648EA-CFA1-430A-B2F0-0071A2877808}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CurrencyParserService", "CurrencyParserService", "{9ABD544F-F1DB-4132-91E6-2683AFC7293F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "CurrencyParserService\ConsoleApp\ConsoleApp.csproj", "{EECDC146-8BD4-4B60-8442-331F35FBD042}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "CurrencyParserService\Application\Application.csproj", "{F5A58330-0D18-42EB-8FB6-9A5E5347C68A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "CurrencyParserService\Domain\Domain.csproj", "{CE2D4468-9C5B-4252-8E28-D7D66ED374D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "CurrencyParserService\Infrastructure\Infrastructure.csproj", "{C44A2413-196F-4495-A822-D169E7360896}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,8 +24,28 @@ Global
 		{D96648EA-CFA1-430A-B2F0-0071A2877808}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D96648EA-CFA1-430A-B2F0-0071A2877808}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D96648EA-CFA1-430A-B2F0-0071A2877808}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EECDC146-8BD4-4B60-8442-331F35FBD042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EECDC146-8BD4-4B60-8442-331F35FBD042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EECDC146-8BD4-4B60-8442-331F35FBD042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EECDC146-8BD4-4B60-8442-331F35FBD042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A58330-0D18-42EB-8FB6-9A5E5347C68A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A58330-0D18-42EB-8FB6-9A5E5347C68A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A58330-0D18-42EB-8FB6-9A5E5347C68A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A58330-0D18-42EB-8FB6-9A5E5347C68A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE2D4468-9C5B-4252-8E28-D7D66ED374D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE2D4468-9C5B-4252-8E28-D7D66ED374D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE2D4468-9C5B-4252-8E28-D7D66ED374D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE2D4468-9C5B-4252-8E28-D7D66ED374D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C44A2413-196F-4495-A822-D169E7360896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C44A2413-196F-4495-A822-D169E7360896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C44A2413-196F-4495-A822-D169E7360896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C44A2413-196F-4495-A822-D169E7360896}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D96648EA-CFA1-430A-B2F0-0071A2877808} = {09B88470-F721-41A7-825F-6916CC5AA997}
+		{EECDC146-8BD4-4B60-8442-331F35FBD042} = {9ABD544F-F1DB-4132-91E6-2683AFC7293F}
+		{F5A58330-0D18-42EB-8FB6-9A5E5347C68A} = {9ABD544F-F1DB-4132-91E6-2683AFC7293F}
+		{CE2D4468-9C5B-4252-8E28-D7D66ED374D4} = {9ABD544F-F1DB-4132-91E6-2683AFC7293F}
+		{C44A2413-196F-4495-A822-D169E7360896} = {9ABD544F-F1DB-4132-91E6-2683AFC7293F}
 	EndGlobalSection
 EndGlobal
