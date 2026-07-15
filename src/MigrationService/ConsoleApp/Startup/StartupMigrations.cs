@@ -34,24 +34,17 @@ public static class StartupMigrations
         var database = configuration["connections:postgres:database"];
         var connectionString = BuildConnectionStringForCreateDatabase(configuration);
         await using var connection = new NpgsqlConnection(connectionString);
-        try
+        await connection.OpenAsync();
+        await using var existsCommand = new NpgsqlCommand(
+            "select exists(select 1 from pg_database where datname = @database)", connection);
+        existsCommand.Parameters.AddWithValue("database", database);
+        if (await existsCommand.ExecuteScalarAsync() is true)
         {
-            await connection.OpenAsync();
-            await using var existsCommand = new NpgsqlCommand(
-                "select exists(select 1 from pg_database where datname = @database)", connection);
-            existsCommand.Parameters.AddWithValue("database", database);
-            if (await existsCommand.ExecuteScalarAsync() is true)
-            {
-                return;
-            }
+            return;
+        }
 
-            await using var createCommand = new NpgsqlCommand($"create database {database}", connection);
-            await createCommand.ExecuteNonQueryAsync();
-        }
-        finally
-        {
-            await connection.CloseAsync();
-        }
+        await using var createCommand = new NpgsqlCommand($"create database {database}", connection);
+        await createCommand.ExecuteNonQueryAsync();
     }
 
     private static string BuildConnectionStringForCreateDatabase(IConfiguration configuration)

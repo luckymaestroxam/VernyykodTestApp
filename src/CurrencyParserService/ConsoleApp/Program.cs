@@ -1,18 +1,14 @@
 ﻿using ConsoleApp.Startup;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
-var configuration = new ConfigurationBuilder()
-    .SetBasePath(AppContext.BaseDirectory)
-    .AddJsonFile("appsettings.json")
-    .AddEnvironmentVariables()
-    .Build();
-
 var host = Host.CreateDefaultBuilder(args)
-    .ConfigureServices((_, services) =>
+    .UseContentRoot(AppContext.BaseDirectory)
+    .ConfigureServices((hostContext, services) =>
     {
+        var configuration = hostContext.Configuration;
         services.AddCbrHttpClient(configuration);
         services.AddServices();
+        services.AddRepositories(configuration);
         services.AddCurrencyParserBackgroundService(configuration);
     })
     .Build();

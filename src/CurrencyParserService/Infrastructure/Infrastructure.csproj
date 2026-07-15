@@ -6,6 +6,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.Text.Encoding.CodePages"/>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL"/>
+    <PackageReference Include="EFCore.BulkExtensions"/>
     <ProjectReference Include="..\Application\Application.csproj"/>
   </ItemGroup>
 </Project>

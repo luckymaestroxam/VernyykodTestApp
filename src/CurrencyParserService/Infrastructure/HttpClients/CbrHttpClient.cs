@@ -8,7 +8,7 @@ using Infrastructure.Options;
 
 namespace Infrastructure.HttpClients;
 
-public class CbrHttpClient(HttpClient httpClient, CbrOptions cbrOptions) : IDailyRateParser
+public class CbrHttpClient(HttpClient httpClient, CbrOptions cbrOptions) : IDailyRateProvider
 {
     private static readonly CultureInfo RussianCulture = CultureInfo.GetCultureInfo("ru-RU");
     private static readonly Encoding Windows1251Encoding;

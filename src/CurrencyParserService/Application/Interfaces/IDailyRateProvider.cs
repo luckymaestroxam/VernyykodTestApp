@@ -2,7 +2,7 @@ using Domain.Aggregates;
 
 namespace Application.Interfaces;
 
-public interface IDailyRateParser
+public interface IDailyRateProvider
 {
     Task<Currency[]> GetDailyRates(CancellationToken cancellationToken = default);
 }

@@ -2,10 +2,15 @@ using Application.Interfaces;
 
 namespace Application.Services;
 
-public class CurrencyParserService (IDailyRateParser dailyRateParser) : ICurrencyParserService
+public class CurrencyParserService(
+    IDailyRateProvider dailyRateProvider,
+    ICurrencyWriteRepository currencyWriteRepository)
+    : ICurrencyParserService
 {
     public async Task Parse(CancellationToken stoppingToken)
     {
-        var result = await dailyRateParser.GetDailyRates(stoppingToken);
+        var dailyRates = await dailyRateProvider.GetDailyRates(stoppingToken);
+
+        await currencyWriteRepository.SaveRates(dailyRates, stoppingToken);
     }
 }

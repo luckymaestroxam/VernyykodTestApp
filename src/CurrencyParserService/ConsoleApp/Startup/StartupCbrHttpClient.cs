@@ -15,7 +15,7 @@ public static class StartupCbrHttpClient
 
         var options = new CbrOptions(new Uri(new Uri(baseUrl), xmlDailyUrl).ToString());
         services.AddSingleton(options);
-        services.AddHttpClient<IDailyRateParser, CbrHttpClient>();
+        services.AddHttpClient<IDailyRateProvider, CbrHttpClient>();
 
         return services;
     }
