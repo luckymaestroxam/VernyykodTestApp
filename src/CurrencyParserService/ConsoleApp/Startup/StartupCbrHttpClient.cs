@@ -3,6 +3,7 @@ using Infrastructure.HttpClients;
 using Infrastructure.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Http.Resilience;
 
 namespace ConsoleApp.Startup;
 
@@ -15,7 +16,11 @@ public static class StartupCbrHttpClient
 
         var options = new CbrOptions(new Uri(new Uri(baseUrl), xmlDailyUrl).ToString());
         services.AddSingleton(options);
-        services.AddHttpClient<IDailyRateProvider, CbrHttpClient>();
+        services.AddHttpClient<IDailyRateProvider, CbrHttpClient>()
+            .AddStandardResilienceHandler(resilience =>
+            {
+                resilience.Retry.MaxRetryAttempts = 3;
+            });
 
         return services;
     }

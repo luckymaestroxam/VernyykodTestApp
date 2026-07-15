@@ -8,6 +8,7 @@
     <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="10.0.10"/>
     <PackageVersion Include="Microsoft.Extensions.Hosting" Version="10.0.10"/>
     <PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.10"/>
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.1.0"/>
     <PackageVersion Include="Npgsql" Version="10.0.3"/>
     <PackageVersion Include="System.Text.Encoding.CodePages" Version="8.0.0"/>
     <PackageVersion Include="EFCore.BulkExtensions" Version="8.1.3"/>
