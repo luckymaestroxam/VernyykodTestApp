@@ -5,6 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="System.Text.Encoding.CodePages"/>
     <ProjectReference Include="..\Application\Application.csproj"/>
   </ItemGroup>
 </Project>
