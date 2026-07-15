@@ -1,0 +1,8 @@
+[Bb]in/
+[Oo]bj/
+.idea/
+*.user
+
+# Frontend
+**/node_modules/
+**/dist/
