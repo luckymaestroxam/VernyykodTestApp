@@ -1,6 +1,5 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Text;
 using Application.Interfaces;
 using Application.Models;
 using Domain.Aggregates;
@@ -9,30 +8,15 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace Infrastructure.Security;
 
-public class JwtTokenService : ITokenService
+public class JwtTokenService(JwtTokenServiceOptions options, TokenValidationParameters validationParameters)
+    : ITokenService
 {
     private static readonly JwtSecurityTokenHandler JwtSecurityTokenHandler = new();
-    private readonly int _expiresTokenInHours;
-    private readonly string _issuer;
-    private readonly SigningCredentials _signingCredentials;
-    private readonly TokenValidationParameters _validationParameters;
+    private readonly int _expiresTokenInHours = options.ExpiresTokenInHours;
+    private readonly string _issuer = options.Issuer;
 
-    public JwtTokenService(JwtTokenServiceOptions options)
-    {
-        var securityKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(options.SymmetricSecurityKey));
-        _validationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidIssuer = options.Issuer,
-            ValidateAudience = false,
-            ValidateLifetime = true,
-            IssuerSigningKey = securityKey,
-            ValidateIssuerSigningKey = true
-        };
-        _signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-        _issuer = options.Issuer;
-        _expiresTokenInHours = options.ExpiresTokenInHours;
-    }
+    private readonly SigningCredentials _signingCredentials = new(validationParameters.IssuerSigningKey,
+        SecurityAlgorithms.HmacSha256);
 
     public string GetToken(User user)
     {
@@ -51,16 +35,14 @@ public class JwtTokenService : ITokenService
             signingCredentials: _signingCredentials
         );
 
-        var result = JwtSecurityTokenHandler.WriteToken(jwt);
-
-        return result;
+        return JwtSecurityTokenHandler.WriteToken(jwt);
     }
 
     public TokenInfo GetTokenInfo(string token)
     {
         try
         {
-            var principal = JwtSecurityTokenHandler.ValidateToken(token, _validationParameters, out _);
+            var principal = JwtSecurityTokenHandler.ValidateToken(token, validationParameters, out _);
             var userName = principal.Identity?.Name;
             var jti = principal.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Jti)?.Value;
             if (string.IsNullOrWhiteSpace(userName))

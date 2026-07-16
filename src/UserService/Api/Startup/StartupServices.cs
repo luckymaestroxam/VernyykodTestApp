@@ -25,6 +25,7 @@ public static class StartupServices
             builder.Configuration.GetValue<string>("jwt:issuer")!,
             builder.Configuration.GetValue<int>("jwt:expiresTokenInHours"));
         builder.Services.AddSingleton(options);
-        builder.Services.AddSingleton<ITokenService, JwtTokenService>(_ => new JwtTokenService(options));
+        builder.Services.AddSingleton(JwtTokenValidation.Create(options));
+        builder.Services.AddSingleton<ITokenService, JwtTokenService>();
     }
 }

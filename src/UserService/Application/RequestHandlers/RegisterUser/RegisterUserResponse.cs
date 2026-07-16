@@ -1,3 +1,3 @@
 namespace Application.RequestHandlers.RegisterUser;
 
-public sealed record RegisterUserResponse(Guid Id, string Name, string Token);
+public sealed record RegisterUserResponse(Guid UserId, string UserName, string Token);

@@ -2,6 +2,8 @@ using Application.Interfaces;
 using Application.RequestHandlers.LoginUser;
 using Application.RequestHandlers.LogoutUser;
 using Application.RequestHandlers.RegisterUser;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers;
@@ -30,14 +32,14 @@ public class AuthController : ControllerBase
         return Ok(result);
     }
 
+    [Authorize]
     [HttpPost("logout")]
     public async Task<IActionResult> Logout(
         [FromServices] IRequestHandler<LogoutUserRequest, LogoutUserResponse> logoutUserRequestHandler,
         CancellationToken cancellationToken)
     {
-        var token = Request.Headers["Authorization"].ToString().Trim().Replace("Bearer ", "");
-
-        await logoutUserRequestHandler.Handle(new LogoutUserRequest(token), cancellationToken);
+        var token = await HttpContext.GetTokenAsync("access_token");
+        await logoutUserRequestHandler.Handle(new LogoutUserRequest(token ?? string.Empty), cancellationToken);
 
         return NoContent();
     }
