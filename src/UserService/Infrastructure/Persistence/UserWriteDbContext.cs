@@ -11,11 +11,11 @@ public class UserWriteDbContext(DbContextOptions<UserWriteDbContext> options) : 
     public DbSet<UserEntity> Users => Set<UserEntity>();
     public DbSet<RevokedTokenEntity> RevokedTokens => Set<RevokedTokenEntity>();
 
-    public async Task<int> SaveChanges(CancellationToken cancellationToken)
+    public async Task SaveChanges(CancellationToken cancellationToken)
     {
         try
         {
-            return await SaveChangesAsync(cancellationToken);
+            await SaveChangesAsync(cancellationToken);
         }
         catch (DbUpdateException ex)
         {
