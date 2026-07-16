@@ -35,8 +35,28 @@ public class CbrHttpClient(HttpClient httpClient, CbrOptions cbrOptions) : IDail
     {
         var id = (string?)valute.Attribute("ID");
         var name = valute.Element("Name")?.Value;
-        decimal.TryParse(valute.Element("Value")?.Value, NumberStyles.Number, RussianCulture, out var rate);
+        var rate = ParseUnitRate(valute);
 
         return Currency.Create(CurrencyId.Create(id), CurrencyName.Create(name), CurrencyRate.Create(rate));
     }
+
+    private static decimal ParseUnitRate(XElement valute)
+    {
+        if (TryParseDecimal(valute.Element("VunitRate")?.Value, out var unitRate))
+        {
+            return unitRate;
+        }
+
+        if (!TryParseDecimal(valute.Element("Value")?.Value, out var value) ||
+            !int.TryParse(valute.Element("Nominal")?.Value, NumberStyles.Integer, RussianCulture, out var nominal) ||
+            nominal <= 0)
+        {
+            return 0m;
+        }
+
+        return value / nominal;
+    }
+
+    private static bool TryParseDecimal(string? value, out decimal result) =>
+        decimal.TryParse(value, NumberStyles.Number, RussianCulture, out result);
 }

@@ -19,6 +19,7 @@ public static class StartupRepositories
         builder.Services.AddScoped<IUserWriteRepository, UserWriteRepository>();
         builder.Services.AddScoped<IUserReadRepository, UserReadRepository>();
         builder.Services.AddScoped<IRevokedTokenWriteRepository, RevokedTokenWriteRepository>();
+        builder.Services.AddScoped<IRevokedTokenReadRepository, RevokedTokenReadRepository>();
         builder.Services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<UserWriteDbContext>());
     }
 

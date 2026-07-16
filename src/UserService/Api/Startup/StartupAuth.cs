@@ -1,3 +1,5 @@
+using System.IdentityModel.Tokens.Jwt;
+using Application.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
@@ -21,6 +23,25 @@ public static class StartupAuth
                 options.SaveToken = true;
                 options.RequireHttpsMetadata = false;
                 options.TokenValidationParameters = validationParameters;
+                options.Events = new JwtBearerEvents
+                {
+                    OnTokenValidated = async context =>
+                    {
+                        if (!Guid.TryParse(context.Principal?.Claims
+                                .FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Jti)?.Value, out var jti))
+                        {
+                            context.Fail("В токене отсутствует корректный jti.");
+                            return;
+                        }
+
+                        var revokedTokenReadRepository =
+                            context.HttpContext.RequestServices.GetRequiredService<IRevokedTokenReadRepository>();
+                        if (await revokedTokenReadRepository.Exists(jti, context.HttpContext.RequestAborted))
+                        {
+                            context.Fail("Токен отозван.");
+                        }
+                    }
+                };
             });
 
         builder.Services.AddAuthorization();

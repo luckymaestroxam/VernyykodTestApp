@@ -12,6 +12,7 @@ public class LogoutUserRequestHandler(
 {
     public async Task<LogoutUserResponse> Handle(LogoutUserRequest request, CancellationToken cancellationToken)
     {
+        // Эти проверки оставил на случай если OnTokenValidated изменится
         if (string.IsNullOrWhiteSpace(request.Token))
         {
             throw new UnauthorizedAccessException("Токен отсутствует.");
