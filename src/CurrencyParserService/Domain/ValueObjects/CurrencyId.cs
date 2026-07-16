@@ -6,9 +6,9 @@ public sealed record CurrencyId
 {
     private static readonly Regex Pattern = new(@"^R\d{5}[A-Z]?$");
 
-    public string Value { get; }
-
     private CurrencyId(string value) => Value = value;
+
+    public string Value { get; }
 
     public static CurrencyId Create(string? value)
     {

@@ -1,6 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using ConsoleApp.Startup;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ConsoleApp.Startup;
 
 var configuration = new ConfigurationBuilder()
     .SetBasePath(AppContext.BaseDirectory)

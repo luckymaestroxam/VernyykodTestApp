@@ -1,6 +1,12 @@
+using Api.Startup;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.AddRepositories();
+builder.AddServices();
+builder.Services.AddControllers();
+
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
-
+app.UseAppExceptionHandler();
+app.MapControllers();
 app.Run();

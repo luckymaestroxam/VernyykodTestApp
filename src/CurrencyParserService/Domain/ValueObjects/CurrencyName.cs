@@ -4,9 +4,9 @@ public sealed record CurrencyName
 {
     private const int MaxLength = 100;
 
-    public string Value { get; }
-
     private CurrencyName(string value) => Value = value;
+
+    public string Value { get; }
 
     public static CurrencyName Create(string? value)
     {

@@ -4,13 +4,13 @@ namespace Application.Services;
 
 public class CurrencyParserService(
     IDailyRateProvider dailyRateProvider,
-    ICurrencyWriteRepository currencyWriteRepository)
+    ICurrencyRepository currencyRepository)
     : ICurrencyParserService
 {
     public async Task Parse(CancellationToken stoppingToken)
     {
         var dailyRates = await dailyRateProvider.GetDailyRates(stoppingToken);
 
-        await currencyWriteRepository.SaveRates(dailyRates, stoppingToken);
+        await currencyRepository.SaveRates(dailyRates, stoppingToken);
     }
 }

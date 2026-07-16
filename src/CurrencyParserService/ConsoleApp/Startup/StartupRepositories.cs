@@ -12,7 +12,7 @@ public static class StartupRepositories
     public static void AddRepositories(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<CurrencyDbContext>(options => options.UseNpgsql(GetConnectionString(configuration)));
-        services.AddScoped<ICurrencyWriteRepository, CurrencyWriteRepository>();
+        services.AddScoped<ICurrencyRepository, CurrencyRepository>();
     }
 
     private static string GetConnectionString(IConfiguration configuration)
