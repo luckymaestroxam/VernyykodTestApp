@@ -3,7 +3,6 @@ using Infrastructure.HttpClients;
 using Infrastructure.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Http.Resilience;
 
 namespace ConsoleApp.Startup;
 

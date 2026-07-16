@@ -1,0 +1,8 @@
+﻿{
+  "profiles": {
+    "API": {
+      "commandName": "Project",
+      "applicationUrl": "http://localhost:7731"
+    }
+  }
+}

@@ -2,12 +2,9 @@ using System.Text.RegularExpressions;
 
 namespace Domain.ValueObjects;
 
-public sealed partial record CurrencyId
+public sealed record CurrencyId
 {
-    [GeneratedRegex(@"^R\d{5}[A-Z]?$", RegexOptions.CultureInvariant)]
-    private static partial Regex CurrencyIdPattern();
-
-    private static readonly Regex Pattern = CurrencyIdPattern();
+    private static readonly Regex Pattern = new(@"^R\d{5}[A-Z]?$");
 
     public string Value { get; }
 

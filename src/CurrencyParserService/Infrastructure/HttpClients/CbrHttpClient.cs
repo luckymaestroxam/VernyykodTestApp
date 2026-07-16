@@ -19,7 +19,7 @@ public class CbrHttpClient(HttpClient httpClient, CbrOptions cbrOptions) : IDail
         Windows1251Encoding = Encoding.GetEncoding(1251);
     }
 
-    public async Task<Currency[]> GetDailyRates(CancellationToken cancellationToken = default)
+    public async Task<Currency[]> GetDailyRates(CancellationToken cancellationToken)
     {
         using var response = await httpClient.GetAsync(cbrOptions.XmlDailyFullUrl, cancellationToken);
         response.EnsureSuccessStatusCode();

@@ -2,8 +2,8 @@ using Domain.Aggregates;
 
 namespace Infrastructure.Dtos;
 
-public static class CurrencyMapping
+internal static class CurrencyMapping
 {
-    public static CurrencyDto ToDto(this Currency currency) =>
-        new() { Id = currency.Id.Value, Name = currency.Name.Value, Rate = currency.Rate.Value };
+    internal static CurrencyDto ToDto(this Currency currency) =>
+        new(currency.Id.Value, currency.Name.Value, currency.Rate.Value);
 }
