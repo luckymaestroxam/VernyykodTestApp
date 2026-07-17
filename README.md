@@ -240,13 +240,11 @@ Authorization: Bearer <jwt>
 
 Swagger UI: [http://localhost:7730/swagger](http://localhost:7730/swagger)
 
-В Swagger UI для защищённых методов нужно нажать **Authorize** и указать:
+В Swagger UI для защищённых методов нужно нажать **Authorize** и указать значение целиком:
 
 ```text
 Bearer <jwt>
 ```
-
-или просто токен (схема уже настроена как Bearer).
 
 ## Запуск через Docker Compose
 

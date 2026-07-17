@@ -13,11 +13,11 @@ public static class StartupSwagger
         {
             options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
             {
+                Description = "JWT Authorization header. Example: \"Bearer {token}\"",
                 Name = "Authorization",
-                Type = SecuritySchemeType.Http,
-                Scheme = "bearer",
-                BearerFormat = "JWT",
-                In = ParameterLocation.Header
+                In = ParameterLocation.Header,
+                Type = SecuritySchemeType.ApiKey,
+                Scheme = "Bearer"
             });
             options.AddSecurityRequirement(new OpenApiSecurityRequirement
             {
@@ -28,7 +28,10 @@ public static class StartupSwagger
                         {
                             Type = ReferenceType.SecurityScheme,
                             Id = "Bearer"
-                        }
+                        },
+                        Scheme = "oauth2",
+                        Name = "Bearer",
+                        In = ParameterLocation.Header
                     }
                 ] = []
             });
