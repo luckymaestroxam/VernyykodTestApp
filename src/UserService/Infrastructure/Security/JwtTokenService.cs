@@ -1,7 +1,6 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Application.Interfaces;
-using Application.Models;
 using Domain.Aggregates;
 using Infrastructure.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -36,25 +35,5 @@ public class JwtTokenService(JwtTokenServiceOptions options, TokenValidationPara
         );
 
         return JwtSecurityTokenHandler.WriteToken(jwt);
-    }
-
-    public TokenInfo GetTokenInfo(string token)
-    {
-        try
-        {
-            var principal = JwtSecurityTokenHandler.ValidateToken(token, validationParameters, out _);
-            var userName = principal.Identity?.Name;
-            var jti = principal.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Jti)?.Value;
-            if (string.IsNullOrWhiteSpace(userName))
-            {
-                return TokenInfo.CreateInvalid();
-            }
-
-            return TokenInfo.CreateValid(userName, jti);
-        }
-        catch (Exception ex) when (ex is SecurityTokenException or ArgumentException)
-        {
-            return TokenInfo.CreateInvalid();
-        }
     }
 }

@@ -1,3 +1,3 @@
 namespace Application.RequestHandlers.LogoutUser;
 
-public sealed record LogoutUserRequest(string Token);
+public sealed record LogoutUserRequest(Guid Jti);

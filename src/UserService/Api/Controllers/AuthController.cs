@@ -2,7 +2,6 @@ using Application.Interfaces;
 using Application.RequestHandlers.LoginUser;
 using Application.RequestHandlers.LogoutUser;
 using Application.RequestHandlers.RegisterUser;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,7 +9,7 @@ namespace Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class AuthController : ControllerBase
+public class AuthController : BaseController
 {
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] RegisterUserRequest request,
@@ -38,8 +37,7 @@ public class AuthController : ControllerBase
         [FromServices] IRequestHandler<LogoutUserRequest, LogoutUserResponse> logoutUserRequestHandler,
         CancellationToken cancellationToken)
     {
-        var token = await HttpContext.GetTokenAsync("access_token");
-        await logoutUserRequestHandler.Handle(new LogoutUserRequest(token ?? string.Empty), cancellationToken);
+        await logoutUserRequestHandler.Handle(new LogoutUserRequest(Jti), cancellationToken);
 
         return NoContent();
     }

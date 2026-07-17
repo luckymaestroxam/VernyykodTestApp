@@ -5,26 +5,13 @@ using Domain.Aggregates;
 namespace Application.RequestHandlers.LogoutUser;
 
 public class LogoutUserRequestHandler(
-    ITokenService tokenService,
     IRevokedTokenWriteRepository revokedTokenWriteRepository,
     IUnitOfWork unitOfWork)
     : IRequestHandler<LogoutUserRequest, LogoutUserResponse>
 {
     public async Task<LogoutUserResponse> Handle(LogoutUserRequest request, CancellationToken cancellationToken)
     {
-        // Эти проверки оставил на случай если OnTokenValidated изменится
-        if (string.IsNullOrWhiteSpace(request.Token))
-        {
-            throw new UnauthorizedAccessException("Токен отсутствует.");
-        }
-
-        var tokenInfo = tokenService.GetTokenInfo(request.Token);
-        if (!tokenInfo.IsValid)
-        {
-            throw new UnauthorizedAccessException("Токен невалидный.");
-        }
-
-        var revokedToken = RevokedToken.Create(tokenInfo.Jti, DateTime.UtcNow);
+        var revokedToken = RevokedToken.Create(request.Jti, DateTime.UtcNow);
 
         try
         {
