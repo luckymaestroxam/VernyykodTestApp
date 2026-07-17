@@ -7,7 +7,6 @@ namespace Application.RequestHandlers.AddUserCurrency;
 
 public class AddUserCurrencyRequestHandler(
     ICurrencyReadRepository currencyReadRepository,
-    IUserCurrencyReadRepository userCurrencyReadRepository,
     IUserCurrencyWriteRepository userCurrencyWriteRepository,
     IUnitOfWork unitOfWork)
     : IRequestHandler<AddUserCurrencyRequest, AddUserCurrencyResponse>
@@ -21,11 +20,6 @@ public class AddUserCurrencyRequestHandler(
         }
 
         var userCurrency = UserCurrency.Create(request.UserId, currencyId);
-        if (await userCurrencyReadRepository.Exists(userCurrency, ct))
-        {
-            throw new UserCurrencyAlreadyAddedException("Избранная валюта уже добавлена.");
-        }
-
         try
         {
             await userCurrencyWriteRepository.Add(userCurrency, ct);

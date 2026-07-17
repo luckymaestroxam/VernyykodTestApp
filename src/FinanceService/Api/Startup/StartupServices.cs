@@ -1,6 +1,7 @@
 using Application.Interfaces;
 using Application.RequestHandlers.AddUserCurrency;
 using Application.RequestHandlers.GetUserCurrencies;
+using Application.RequestHandlers.RemoveUserCurrency;
 
 namespace Api.Startup;
 
@@ -12,5 +13,7 @@ public static class StartupServices
             GetUserCurrenciesRequestHandler>();
         builder.Services.AddScoped<IRequestHandler<AddUserCurrencyRequest, AddUserCurrencyResponse>,
             AddUserCurrencyRequestHandler>();
+        builder.Services.AddScoped<IRequestHandler<RemoveUserCurrencyRequest, RemoveUserCurrencyResponse>,
+            RemoveUserCurrencyRequestHandler>();
     }
 }

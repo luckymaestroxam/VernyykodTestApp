@@ -1,6 +1,7 @@
 using Application.Interfaces;
 using Application.RequestHandlers.AddUserCurrency;
 using Application.RequestHandlers.GetUserCurrencies;
+using Application.RequestHandlers.RemoveUserCurrency;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -32,6 +33,19 @@ public class UserCurrenciesController : BaseController
         var request = new AddUserCurrencyRequest(UserId, currencyId);
 
         var result = await addUserCurrencyRequestHandler.Handle(request, cancellationToken);
+
+        return Created(string.Empty, result);
+    }
+
+    [HttpDelete("currency/{currencyId}")]
+    public async Task<IActionResult> Remove(
+        [FromServices]
+        IRequestHandler<RemoveUserCurrencyRequest, RemoveUserCurrencyResponse> removeUserCurrencyRequestHandler,
+        [FromRoute] string currencyId, CancellationToken cancellationToken)
+    {
+        var request = new RemoveUserCurrencyRequest(UserId, currencyId);
+
+        var result = await removeUserCurrencyRequestHandler.Handle(request, cancellationToken);
 
         return Created(string.Empty, result);
     }

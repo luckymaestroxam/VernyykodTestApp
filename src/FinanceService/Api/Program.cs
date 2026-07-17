@@ -7,5 +7,6 @@ builder.AddAuth();
 builder.Services.AddControllers();
 
 var app = builder.Build();
+app.UseAppExceptionHandler();
 app.MapControllers();
 app.Run();
