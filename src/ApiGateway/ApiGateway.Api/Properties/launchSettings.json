@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ApiGateway.Api": {
+      "commandName": "Project",
+      "applicationUrl": "http://localhost:7730"
+    }
+  }
+}
