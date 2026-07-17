@@ -9,7 +9,7 @@ public class FinanceServiceWriteDbContext(DbContextOptions<FinanceServiceWriteDb
     : DbContext(options), IUnitOfWork
 {
     public DbSet<UserCurrencyEntity> UserCurrencies => Set<UserCurrencyEntity>();
-    
+
     public async Task SaveChanges(CancellationToken cancellationToken)
     {
         try

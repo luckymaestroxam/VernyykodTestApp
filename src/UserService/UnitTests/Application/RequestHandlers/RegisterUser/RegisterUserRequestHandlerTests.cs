@@ -40,7 +40,7 @@ public class RegisterUserRequestHandlerTests
         var ct = CancellationToken.None;
         var passwordData = PasswordData.Create(Fixture.Create<string>());
         _passwordHasher.Hash(PlainPassword.Create(request.Password)).Returns(passwordData);
-        var conflictException = new RepositoryConflictException("conflict", new Exception());
+        var conflictException = new DuplicateResourceException("conflict", new Exception());
         _unitOfWork.SaveChanges(ct).ThrowsAsync(conflictException);
 
         Assert.Multiple(() =>

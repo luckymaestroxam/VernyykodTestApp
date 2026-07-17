@@ -38,7 +38,7 @@ public class LogoutUserRequestHandlerTests
     {
         var request = Fixture.Create<LogoutUserRequest>();
         var ct = CancellationToken.None;
-        var conflictException = new RepositoryConflictException("conflict", new Exception());
+        var conflictException = new DuplicateResourceException("conflict", new Exception());
         _unitOfWork.SaveChanges(ct).ThrowsAsync(conflictException);
 
         Assert.Multiple(() =>

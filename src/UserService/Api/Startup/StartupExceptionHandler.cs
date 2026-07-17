@@ -13,7 +13,7 @@ public static class StartupExceptionHandler
                 var exception = context.Features.Get<IExceptionHandlerFeature>()?.Error;
                 context.Response.StatusCode = exception switch
                 {
-                    RepositoryConflictException => StatusCodes.Status409Conflict,
+                    DuplicateResourceException => StatusCodes.Status409Conflict,
                     UserAlreadyExistsException => StatusCodes.Status409Conflict,
                     UserAlreadyLogoutException => StatusCodes.Status409Conflict,
                     ArgumentException => StatusCodes.Status400BadRequest,

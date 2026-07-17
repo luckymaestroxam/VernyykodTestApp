@@ -24,7 +24,7 @@ public class RegisterUserRequestHandler(
             await userWriteRepository.Add(user, cancellationToken);
             await unitOfWork.SaveChanges(cancellationToken);
         }
-        catch (RepositoryConflictException ex)
+        catch (DuplicateResourceException ex)
         {
             throw new UserAlreadyExistsException("Пользователь уже существует.", ex);
         }

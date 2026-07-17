@@ -1,5 +1,5 @@
-using Infrastructure.Entities;
 using Infrastructure.Configurations;
+using Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistence;

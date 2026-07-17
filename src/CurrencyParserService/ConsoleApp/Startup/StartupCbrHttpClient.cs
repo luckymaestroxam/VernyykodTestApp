@@ -13,7 +13,7 @@ public static class StartupCbrHttpClient
         var baseUrl = configuration["cbr:http:baseUrl"];
         var xmlDailyUrl = configuration["cbr:http:xmldailyurl"];
 
-        var options = new CbrOptions(new Uri(new Uri(baseUrl), xmlDailyUrl).ToString());
+        var options = new CbrOptions(new Uri(new Uri(baseUrl!), xmlDailyUrl).ToString());
         services.AddSingleton(options);
         services.AddHttpClient<IDailyRateProvider, CbrHttpClient>()
             .AddStandardResilienceHandler(resilience =>

@@ -18,7 +18,7 @@ public class LogoutUserRequestHandler(
             await revokedTokenWriteRepository.Add(revokedToken, cancellationToken);
             await unitOfWork.SaveChanges(cancellationToken);
         }
-        catch (RepositoryConflictException ex)
+        catch (DuplicateResourceException ex)
         {
             throw new UserAlreadyLogoutException("Выход уже был произведен ранее.", ex);
         }

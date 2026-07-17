@@ -13,8 +13,8 @@ public static class StartupExceptionHandler
                 var exception = context.Features.Get<IExceptionHandlerFeature>()?.Error;
                 context.Response.StatusCode = exception switch
                 {
-                    RepositoryConflictException => StatusCodes.Status409Conflict,
-                    CurrencyNotExistsException => StatusCodes.Status409Conflict,
+                    DuplicateResourceException => StatusCodes.Status409Conflict,
+                    CurrencyNotExistsException => StatusCodes.Status404NotFound,
                     ArgumentException => StatusCodes.Status400BadRequest,
                     UnauthorizedAccessException => StatusCodes.Status401Unauthorized,
                     _ => StatusCodes.Status500InternalServerError

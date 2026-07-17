@@ -9,7 +9,7 @@ namespace Api.Controllers;
 
 [ApiController]
 [Authorize]
-[Route("api/[controller]")]
+[Route("api/user-currencies")]
 public class UserCurrenciesController : BaseController
 {
     [HttpGet]
@@ -45,8 +45,8 @@ public class UserCurrenciesController : BaseController
     {
         var request = new RemoveUserCurrencyRequest(UserId, currencyId);
 
-        var result = await removeUserCurrencyRequestHandler.Handle(request, cancellationToken);
+        await removeUserCurrencyRequestHandler.Handle(request, cancellationToken);
 
-        return Created(string.Empty, result);
+        return NoContent();
     }
 }

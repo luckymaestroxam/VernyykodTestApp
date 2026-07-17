@@ -12,7 +12,7 @@ public static class DbUpdateExceptionExtensions
         {
             if (current is PostgresException postgresException && IsUniqueOrForeignKeyViolation(postgresException))
             {
-                throw new RepositoryConflictException("Нарушено ограничение уникальности или внешнего ключа.",
+                throw new DuplicateResourceException("Нарушено ограничение уникальности или внешнего ключа.",
                     exception);
             }
         }

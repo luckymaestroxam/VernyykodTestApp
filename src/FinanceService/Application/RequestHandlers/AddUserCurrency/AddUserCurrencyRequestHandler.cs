@@ -25,7 +25,7 @@ public class AddUserCurrencyRequestHandler(
             await userCurrencyWriteRepository.Add(userCurrency, ct);
             await unitOfWork.SaveChanges(ct);
         }
-        catch (RepositoryConflictException ex)
+        catch (DuplicateResourceException ex)
         {
             throw new UserCurrencyAlreadyAddedException("Избранная валюта уже добавлена.", ex);
         }

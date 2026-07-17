@@ -37,7 +37,7 @@ public static class StartupMigrations
         await connection.OpenAsync();
         await using var existsCommand = new NpgsqlCommand(
             "select exists(select 1 from pg_database where datname = @database)", connection);
-        existsCommand.Parameters.AddWithValue("database", database);
+        existsCommand.Parameters.AddWithValue("database", database!);
         if (await existsCommand.ExecuteScalarAsync() is true)
         {
             return;
