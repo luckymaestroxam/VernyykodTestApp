@@ -24,11 +24,7 @@ public class LogoutUserRequestHandlerTests
     }
 
     [TearDown]
-    public void TearDown()
-    {
-        _revokedTokenWriteRepository.ClearReceivedCalls();
-        _unitOfWork.ClearReceivedCalls();
-    }
+    public void TearDown() => _unitOfWork.ClearReceivedCalls();
 
     private static readonly Fixture Fixture = new();
     private IRevokedTokenWriteRepository _revokedTokenWriteRepository;
