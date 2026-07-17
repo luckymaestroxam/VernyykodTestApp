@@ -6,6 +6,6 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Shared\Shared.Application\Shared.Application.csproj"/>
-    <ProjectReference Include="..\Domain\UserService.Domain.csproj"/>
+    <ProjectReference Include="..\UserService.Domain\UserService.Domain.csproj"/>
   </ItemGroup>
 </Project>

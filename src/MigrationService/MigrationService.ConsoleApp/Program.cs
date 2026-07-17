@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MigrationService.ConsoleApp.Startup;
 
@@ -13,4 +13,4 @@ await using var serviceProvider = new ServiceCollection()
     .BuildServiceProvider();
 await serviceProvider.MigrateDatabase(configuration);
 
-Console.WriteLine("�������� ������� ���������.");
+Console.WriteLine("???????? ??????? ?????????.");

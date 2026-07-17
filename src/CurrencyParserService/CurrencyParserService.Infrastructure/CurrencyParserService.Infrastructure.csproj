@@ -9,6 +9,6 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL"/>
     <PackageReference Include="EFCore.BulkExtensions"/>
     <ProjectReference Include="..\..\Shared\Shared.Infrastructure\Shared.Infrastructure.csproj"/>
-    <ProjectReference Include="..\Application\CurrencyParserService.Application.csproj"/>
+    <ProjectReference Include="..\CurrencyParserService.Application\CurrencyParserService.Application.csproj"/>
   </ItemGroup>
 </Project>

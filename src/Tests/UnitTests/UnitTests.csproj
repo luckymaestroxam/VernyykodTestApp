@@ -1,11 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\FinanceService\Application\FinanceService.Application.csproj"/>
-    <ProjectReference Include="..\..\UserService\Infrastructure\UserService.Infrastructure.csproj"/>
+    <ProjectReference Include="..\..\FinanceService\FinanceService.Application\FinanceService.Application.csproj"/>
+    <ProjectReference Include="..\..\UserService\UserService.Infrastructure\UserService.Infrastructure.csproj"/>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoFixture"/>

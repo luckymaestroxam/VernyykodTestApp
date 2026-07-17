@@ -6,6 +6,6 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Shared\Shared.Api\Shared.Api.csproj"/>
-    <ProjectReference Include="..\Infrastructure\FinanceService.Infrastructure.csproj"/>
+    <ProjectReference Include="..\FinanceService.Infrastructure\FinanceService.Infrastructure.csproj"/>
   </ItemGroup>
 </Project>

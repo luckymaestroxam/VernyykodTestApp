@@ -6,6 +6,6 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Shared\Shared.Api\Shared.Api.csproj"/>
-    <ProjectReference Include="..\Infrastructure\UserService.Infrastructure.csproj"/>
+    <ProjectReference Include="..\UserService.Infrastructure\UserService.Infrastructure.csproj"/>
   </ItemGroup>
 </Project>

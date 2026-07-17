@@ -2,25 +2,25 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MigrationService", "MigrationService", "{09B88470-F721-41A7-825F-6916CC5AA997}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "MigrationService\ConsoleApp\MigrationService.ConsoleApp.csproj", "{D96648EA-CFA1-430A-B2F0-0071A2877808}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "MigrationService\MigrationService.ConsoleApp\MigrationService.ConsoleApp.csproj", "{D96648EA-CFA1-430A-B2F0-0071A2877808}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CurrencyParserService", "CurrencyParserService", "{9ABD544F-F1DB-4132-91E6-2683AFC7293F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "CurrencyParserService\ConsoleApp\CurrencyParserService.ConsoleApp.csproj", "{EECDC146-8BD4-4B60-8442-331F35FBD042}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "CurrencyParserService\CurrencyParserService.ConsoleApp\CurrencyParserService.ConsoleApp.csproj", "{EECDC146-8BD4-4B60-8442-331F35FBD042}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "CurrencyParserService\Application\CurrencyParserService.Application.csproj", "{F5A58330-0D18-42EB-8FB6-9A5E5347C68A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "CurrencyParserService\CurrencyParserService.Application\CurrencyParserService.Application.csproj", "{F5A58330-0D18-42EB-8FB6-9A5E5347C68A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "CurrencyParserService\Infrastructure\CurrencyParserService.Infrastructure.csproj", "{C44A2413-196F-4495-A822-D169E7360896}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "CurrencyParserService\CurrencyParserService.Infrastructure\CurrencyParserService.Infrastructure.csproj", "{C44A2413-196F-4495-A822-D169E7360896}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserService", "UserService", "{110C9DC2-ED56-42D0-912C-E525DBC6FE0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "UserService\Api\UserService.Api.csproj", "{73724AFF-0FAC-48CF-8A78-7D4DFE1C4B0D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "UserService\UserService.Api\UserService.Api.csproj", "{73724AFF-0FAC-48CF-8A78-7D4DFE1C4B0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "UserService\Application\UserService.Application.csproj", "{703F33F4-E499-4027-BC92-E9CACA1DA437}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "UserService\UserService.Application\UserService.Application.csproj", "{703F33F4-E499-4027-BC92-E9CACA1DA437}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "UserService\Domain\UserService.Domain.csproj", "{3C8505FD-6B48-4128-9A8A-C59C1A768B47}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "UserService\UserService.Domain\UserService.Domain.csproj", "{3C8505FD-6B48-4128-9A8A-C59C1A768B47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "UserService\Infrastructure\UserService.Infrastructure.csproj", "{C382EAC1-5AFD-40D3-AF6B-1FFAD3A3BF7A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "UserService\UserService.Infrastructure\UserService.Infrastructure.csproj", "{C382EAC1-5AFD-40D3-AF6B-1FFAD3A3BF7A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "Tests\UnitTests\UnitTests.csproj", "{7A670621-661E-466B-BB53-08A9C11D6B14}"
 EndProject
@@ -30,17 +30,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FinanceService", "FinanceSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Domain", "Shared\Shared.Domain\Shared.Domain.csproj", "{6D37E15F-DACB-4BF6-8FBF-87F66B1BB79B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "FinanceService\Domain\FinanceService.Domain.csproj", "{BD7DC99B-7E41-4BF7-B34A-2349BEF42CDD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "FinanceService\FinanceService.Domain\FinanceService.Domain.csproj", "{BD7DC99B-7E41-4BF7-B34A-2349BEF42CDD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Application", "Shared\Shared.Application\Shared.Application.csproj", "{829933B2-91C7-4FB1-91E1-C276FE734BA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "FinanceService\Application\FinanceService.Application.csproj", "{75528BD2-F072-4F7B-8150-7E416B49C7CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "FinanceService\FinanceService.Application\FinanceService.Application.csproj", "{75528BD2-F072-4F7B-8150-7E416B49C7CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "FinanceService\Infrastructure\FinanceService.Infrastructure.csproj", "{A749BD5C-536F-4F47-B703-6F0F2D2D7763}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "FinanceService\FinanceService.Infrastructure\FinanceService.Infrastructure.csproj", "{A749BD5C-536F-4F47-B703-6F0F2D2D7763}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Infrastructure", "Shared\Shared.Infrastructure\Shared.Infrastructure.csproj", "{19432406-6C8C-410B-BDD3-8D8672255EB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "FinanceService\Api\FinanceService.Api.csproj", "{D00BB562-3FE5-4DE3-B4D0-C31DA1CE5293}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "FinanceService\FinanceService.Api\FinanceService.Api.csproj", "{D00BB562-3FE5-4DE3-B4D0-C31DA1CE5293}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Api", "Shared\Shared.Api\Shared.Api.csproj", "{95830441-2E78-4E1F-988F-D207789533FA}"
 EndProject

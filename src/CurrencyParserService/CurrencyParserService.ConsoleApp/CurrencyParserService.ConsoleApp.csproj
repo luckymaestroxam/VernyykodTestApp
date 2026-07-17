@@ -16,6 +16,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Infrastructure\CurrencyParserService.Infrastructure.csproj"/>
+    <ProjectReference Include="..\CurrencyParserService.Infrastructure\CurrencyParserService.Infrastructure.csproj"/>
   </ItemGroup>
 </Project>
