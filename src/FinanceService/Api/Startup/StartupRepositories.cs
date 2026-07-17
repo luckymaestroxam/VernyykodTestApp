@@ -15,6 +15,7 @@ public static class StartupRepositories
             options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         });
         builder.Services.AddScoped<IRevokedTokenReadRepository, RevokedTokenReadRepository>();
+        builder.Services.AddScoped<IUserCurrencyReadRepository, UserCurrencyReadRepository>();
     }
 
     private static string GetConnectionString(IConfiguration configuration)

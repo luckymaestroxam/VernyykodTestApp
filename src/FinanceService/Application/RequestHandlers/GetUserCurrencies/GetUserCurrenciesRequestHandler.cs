@@ -2,11 +2,14 @@ using Application.Interfaces;
 
 namespace Application.RequestHandlers.GetUserCurrencies;
 
-public class GetUserCurrenciesRequestHandler : IRequestHandler<GetUserCurrenciesRequest, GetUserCurrenciesResponse>
+public class GetUserCurrenciesRequestHandler(IUserCurrencyReadRepository userCurrencyReadRepository)
+    : IRequestHandler<GetUserCurrenciesRequest, GetUserCurrenciesResponse>
 {
     public async Task<GetUserCurrenciesResponse>
         Handle(GetUserCurrenciesRequest request, CancellationToken cancellationToken)
     {
-        return new GetUserCurrenciesResponse(null);
+        var userCurrencies = await userCurrencyReadRepository.GetMany(request.UserId, cancellationToken);
+
+        return new GetUserCurrenciesResponse(userCurrencies);
     }
 }
