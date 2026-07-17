@@ -64,7 +64,8 @@ public class RegisterUserRequestHandlerTests
         var token = Fixture.Create<string>();
         User user = null;
         _userWriteRepository.Add(Arg.Do<User>(u => user = u), ct).Returns(Task.CompletedTask);
-        _tokenService.GetToken(Arg.Is<User>(u => u.Id == user.Id)).Returns(token);
+        _tokenService.GetToken(Arg.Is<Guid>(id => id == user.Id), Arg.Is<string>(name => name == user.Name.Value))
+            .Returns(token);
         _unitOfWork.SaveChanges(ct).Returns(Task.CompletedTask);
 
         var response = await _handler.Handle(request, ct);

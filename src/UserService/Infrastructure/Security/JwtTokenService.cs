@@ -1,7 +1,6 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Application.Interfaces;
-using Domain.Aggregates;
 using Infrastructure.Options;
 using Microsoft.IdentityModel.Tokens;
 
@@ -17,12 +16,12 @@ public class JwtTokenService(JwtTokenServiceOptions options, TokenValidationPara
     private readonly SigningCredentials _signingCredentials = new(validationParameters.IssuerSigningKey,
         SecurityAlgorithms.HmacSha256);
 
-    public string GetToken(User user)
+    public string GetToken(Guid userId, string userName)
     {
         var claims = new List<Claim>
         {
-            new(ClaimsIdentity.DefaultNameClaimType, user.Name.Value),
-            new(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+            new(ClaimsIdentity.DefaultNameClaimType, userName),
+            new(JwtRegisteredClaimNames.Sub, userId.ToString()),
             new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
         };
 

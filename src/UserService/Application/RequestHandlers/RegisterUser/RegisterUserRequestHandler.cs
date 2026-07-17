@@ -29,7 +29,7 @@ public class RegisterUserRequestHandler(
             throw new UserAlreadyExistsException("Пользователь уже существует.", ex);
         }
 
-        var token = tokenService.GetToken(user);
+        var token = tokenService.GetToken(user.Id, user.Name.Value);
         return new RegisterUserResponse(user.Id, user.Name.Value, token);
     }
 }

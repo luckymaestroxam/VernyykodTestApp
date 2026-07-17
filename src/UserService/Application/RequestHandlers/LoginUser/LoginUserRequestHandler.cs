@@ -18,13 +18,13 @@ public class LoginUserRequestHandler(
         }
 
         var password = PlainPassword.Create(request.Password);
-        if (!passwordVerifier.Matches(password, user.PasswordData))
+        if (!passwordVerifier.Matches(password, PasswordData.Create(user.PasswordHash)))
         {
             throw new UnauthorizedAccessException("Неверный логин или пароль.");
         }
 
-        var token = tokenService.GetToken(user);
+        var token = tokenService.GetToken(user.Id, user.Name);
 
-        return new LoginUserResponse(user.Id, user.Name.Value, token);
+        return new LoginUserResponse(user.Id, user.Name, token);
     }
 }

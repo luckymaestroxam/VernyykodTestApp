@@ -1,6 +1,5 @@
 using Application.Interfaces;
-using Domain.Aggregates;
-using Infrastructure.Mappers;
+using Application.Models;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,10 +7,10 @@ namespace Infrastructure.Repositories;
 
 public class UserReadRepository(UserReadDbContext userReadDbContext) : IUserReadRepository
 {
-    public async Task<User?> Get(string name, CancellationToken cancellationToken)
+    public async Task<UserDto?> Get(string name, CancellationToken cancellationToken)
     {
         var userInDb = await userReadDbContext.Users.FirstOrDefaultAsync(u => u.Name == name, cancellationToken);
 
-        return userInDb?.ToUser();
+        return userInDb is null ? null : new UserDto(userInDb.Id, userInDb.Name, userInDb.Password);
     }
 }

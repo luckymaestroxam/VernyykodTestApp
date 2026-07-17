@@ -10,8 +10,6 @@ public sealed record CurrencyId
 
     public string Value { get; }
 
-    internal static CurrencyId FromStorage(string value) => new(value);
-
     public static CurrencyId Create(string? value)
     {
         if (string.IsNullOrWhiteSpace(value))

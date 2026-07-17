@@ -1,8 +1,6 @@
-using Domain.Aggregates;
-
 namespace Application.Interfaces;
 
 public interface ITokenService
 {
-    string GetToken(User user);
+    string GetToken(Guid userId, string userName);
 }

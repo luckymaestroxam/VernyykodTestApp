@@ -19,6 +19,4 @@ public sealed record User
     public PasswordData PasswordData { get; }
 
     public static User Create(UserName name, PasswordData passwordData) => new(Guid.NewGuid(), name, passwordData);
-
-    internal static User FromStorage(Guid id, UserName name, PasswordData passwordData) => new(id, name, passwordData);
 }

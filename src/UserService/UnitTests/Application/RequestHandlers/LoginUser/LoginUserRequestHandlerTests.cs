@@ -1,7 +1,7 @@
 using Application.Interfaces;
+using Application.Models;
 using Application.RequestHandlers.LoginUser;
 using AutoFixture;
-using Domain.Aggregates;
 using Domain.ValueObjects;
 using NSubstitute;
 using NSubstitute.ReturnsExtensions;
@@ -50,9 +50,10 @@ public class LoginUserRequestHandlerTests
             .With(r => r.Password, "Password1")
             .Create();
         var ct = CancellationToken.None;
-        var user = User.Create(UserName.Create(request.Name), PasswordData.Create(request.Password));
+        var user = new UserDto(Guid.NewGuid(), request.Name, request.Password);
         _userReadRepository.Get(request.Name, ct).Returns(user);
-        _passwordVerifier.Matches(PlainPassword.Create(request.Password), user.PasswordData).Returns(false);
+        _passwordVerifier.Matches(PlainPassword.Create(request.Password), Arg.Any<PasswordData>())
+            .Returns(false);
 
         Assert.Multiple(() =>
         {
@@ -69,18 +70,19 @@ public class LoginUserRequestHandlerTests
             .With(r => r.Password, "Password1")
             .Create();
         var ct = CancellationToken.None;
-        var user = User.Create(UserName.Create(request.Name), PasswordData.Create(request.Password));
+        var user = new UserDto(Guid.NewGuid(), request.Name, request.Password);
         _userReadRepository.Get(request.Name, ct).Returns(user);
-        _passwordVerifier.Matches(PlainPassword.Create(request.Password), user.PasswordData).Returns(true);
+        _passwordVerifier.Matches(PlainPassword.Create(request.Password), Arg.Any<PasswordData>())
+            .Returns(true);
         var token = Fixture.Create<string>();
-        _tokenService.GetToken(user).Returns(token);
+        _tokenService.GetToken(user.Id, user.Name).Returns(token);
 
         var response = await _handler.Handle(request, ct);
 
         Assert.Multiple(() =>
         {
             Assert.That(response.UserId, Is.EqualTo(user.Id));
-            Assert.That(response.UserName, Is.EqualTo(user.Name.Value));
+            Assert.That(response.UserName, Is.EqualTo(user.Name));
             Assert.That(response.Token, Is.EqualTo(token));
         });
     }

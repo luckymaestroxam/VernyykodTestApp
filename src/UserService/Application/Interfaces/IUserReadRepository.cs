@@ -1,8 +1,8 @@
-using Domain.Aggregates;
+using Application.Models;
 
 namespace Application.Interfaces;
 
 public interface IUserReadRepository
 {
-    Task<User?> Get(string name, CancellationToken cancellationToken);
+    Task<UserDto?> Get(string name, CancellationToken cancellationToken);
 }

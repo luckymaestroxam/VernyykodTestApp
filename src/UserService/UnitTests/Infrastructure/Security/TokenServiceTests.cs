@@ -34,7 +34,7 @@ public class TokenServiceTests
         var user = User.Create(UserName.Create(Fixture.Create<string>()),
             PasswordData.Create(Fixture.Create<string>()));
 
-        var result = _service.GetToken(user);
+        var result = _service.GetToken(user.Id, user.Name.Value);
         var jwt = JwtHandler.ReadJwtToken(result);
 
         Assert.Multiple(() =>
