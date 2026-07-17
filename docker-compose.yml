@@ -1,3 +1,10 @@
+x-postgres-environment: &postgres-environment
+  connections__postgres__host: postgresql
+  connections__postgres__port: 5432
+  connections__postgres__username: postgres
+  connections__postgres__password: ps
+  connections__postgres__database: vernyykod
+
 services:
   postgresql:
     image: postgres:17.3
@@ -6,4 +13,77 @@ services:
       POSTGRES_PASSWORD: ps
     ports:
       - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
     restart: unless-stopped
+
+  migration-service:
+    build:
+      context: .
+      dockerfile: src/MigrationService/MigrationService.ConsoleApp/Dockerfile
+    environment:
+      <<: *postgres-environment
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    restart: "no"
+
+  currency-parser-service:
+    build:
+      context: .
+      dockerfile: src/CurrencyParserService/CurrencyParserService.ConsoleApp/Dockerfile
+    environment:
+      <<: *postgres-environment
+    depends_on:
+      migration-service:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+  user-service:
+    build:
+      context: .
+      dockerfile: src/UserService/UserService.Api/Dockerfile
+    environment:
+      <<: *postgres-environment
+      ASPNETCORE_ENVIRONMENT: Development
+    depends_on:
+      currency-parser-service:
+        condition: service_started
+    restart: unless-stopped
+
+  finance-service:
+    build:
+      context: .
+      dockerfile: src/FinanceService/FinanceService.Api/Dockerfile
+    environment:
+      <<: *postgres-environment
+      ASPNETCORE_ENVIRONMENT: Development
+    depends_on:
+      currency-parser-service:
+        condition: service_started
+    restart: unless-stopped
+
+  api-gateway:
+    build:
+      context: .
+      dockerfile: src/ApiGateway/ApiGateway.Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ReverseProxy__Clusters__user-service__Destinations__default__Address: http://user-service:8080/
+      ReverseProxy__Clusters__finance-service__Destinations__default__Address: http://finance-service:8080/
+    ports:
+      - "7730:8080"
+    depends_on:
+      user-service:
+        condition: service_started
+      finance-service:
+        condition: service_started
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
