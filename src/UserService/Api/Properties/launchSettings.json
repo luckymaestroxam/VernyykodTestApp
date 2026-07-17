@@ -1,6 +1,6 @@
 ﻿{
   "profiles": {
-    "API": {
+    "UserService.Api": {
       "commandName": "Project",
       "applicationUrl": "http://localhost:7731"
     }

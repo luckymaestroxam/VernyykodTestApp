@@ -1,7 +1,7 @@
 using Application.Exceptions;
 using Application.Interfaces;
 using Infrastructure.Entities;
-using Infrastructure.Persistence.Configurations;
+using Infrastructure.Configurations;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 

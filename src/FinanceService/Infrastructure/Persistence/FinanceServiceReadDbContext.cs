@@ -1,17 +1,15 @@
-using Infrastructure.Entities;
 using Infrastructure.Configurations;
+using Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistence;
 
-public class UserReadDbContext(DbContextOptions<UserReadDbContext> options) : DbContext(options)
+public class FinanceServiceReadDbContext(DbContextOptions<FinanceServiceReadDbContext> options) : DbContext(options)
 {
-    public DbSet<UserEntity> Users => Set<UserEntity>();
     public DbSet<RevokedTokenEntity> RevokedTokens => Set<RevokedTokenEntity>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfiguration(new UserEntityConfiguration());
         modelBuilder.ApplyConfiguration(new RevokedTokenEntityConfiguration());
     }
 }

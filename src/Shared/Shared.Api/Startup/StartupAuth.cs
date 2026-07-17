@@ -1,6 +1,11 @@
 using System.IdentityModel.Tokens.Jwt;
 using Application.Interfaces;
+using Infrastructure.Options;
+using Infrastructure.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Api.Startup;
@@ -43,6 +48,13 @@ public static class StartupAuth
                     }
                 };
             });
+
+        var options = new JwtTokenServiceOptions(
+            builder.Configuration.GetValue<string>("jwt:key")!,
+            builder.Configuration.GetValue<string>("jwt:issuer")!,
+            builder.Configuration.GetValue<int>("jwt:expiresTokenInHours"));
+        builder.Services.AddSingleton(options);
+        builder.Services.AddSingleton(JwtTokenValidation.Create(options));
 
         builder.Services.AddAuthorization();
     }

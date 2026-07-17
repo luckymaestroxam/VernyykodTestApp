@@ -1,0 +1,8 @@
+﻿{
+  "profiles": {
+    "FinanceService.Api": {
+      "commandName": "Project",
+      "applicationUrl": "http://localhost:7732"
+    }
+  }
+}
