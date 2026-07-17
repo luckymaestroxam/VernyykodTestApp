@@ -6,6 +6,7 @@ namespace Infrastructure.Persistence;
 
 public class FinanceServiceReadDbContext(DbContextOptions<FinanceServiceReadDbContext> options) : DbContext(options)
 {
+    public DbSet<CurrencyEntity> Currencies => Set<CurrencyEntity>();
     public DbSet<RevokedTokenEntity> RevokedTokens => Set<RevokedTokenEntity>();
     public DbSet<UserCurrencyEntity> UserCurrencies => Set<UserCurrencyEntity>();
 

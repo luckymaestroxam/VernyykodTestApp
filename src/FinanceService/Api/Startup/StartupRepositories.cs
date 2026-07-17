@@ -14,8 +14,15 @@ public static class StartupRepositories
             options.UseNpgsql(GetConnectionString(builder.Configuration));
             options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         });
+        builder.Services.AddDbContext<FinanceServiceWriteDbContext>(options =>
+        {
+            options.UseNpgsql(GetConnectionString(builder.Configuration));
+        });
         builder.Services.AddScoped<IRevokedTokenReadRepository, RevokedTokenReadRepository>();
         builder.Services.AddScoped<IUserCurrencyReadRepository, UserCurrencyReadRepository>();
+        builder.Services.AddScoped<IUserCurrencyWriteRepository, UserCurrencyWriteRepository>();
+        builder.Services.AddScoped<ICurrencyReadRepository, CurrencyReadRepository>();
+        builder.Services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<FinanceServiceWriteDbContext>());
     }
 
     private static string GetConnectionString(IConfiguration configuration)

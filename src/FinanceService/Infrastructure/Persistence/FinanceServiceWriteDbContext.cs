@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistence;
 
-public class UserWriteDbContext(DbContextOptions<UserWriteDbContext> options) : DbContext(options), IUnitOfWork
+public class FinanceServiceWriteDbContext(DbContextOptions<FinanceServiceWriteDbContext> options)
+    : DbContext(options), IUnitOfWork
 {
-    public DbSet<UserEntity> Users => Set<UserEntity>();
-    public DbSet<RevokedTokenEntity> RevokedTokens => Set<RevokedTokenEntity>();
-
+    public DbSet<UserCurrencyEntity> UserCurrencies => Set<UserCurrencyEntity>();
+    
     public async Task SaveChanges(CancellationToken cancellationToken)
     {
         try
@@ -25,7 +25,7 @@ public class UserWriteDbContext(DbContextOptions<UserWriteDbContext> options) : 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfiguration(new UserEntityConfiguration());
-        modelBuilder.ApplyConfiguration(new RevokedTokenEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new CurrencyEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new UserCurrencyEntityConfiguration());
     }
 }
