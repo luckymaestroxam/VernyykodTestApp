@@ -1,10 +1,10 @@
-using Application.Interfaces;
-using Domain.Aggregates;
+using CurrencyParserService.Application.Interfaces;
+using CurrencyParserService.Infrastructure.Mappers;
+using CurrencyParserService.Infrastructure.Persistence;
 using EFCore.BulkExtensions;
-using Infrastructure.Mappers;
-using Infrastructure.Persistence;
+using Shared.Domain.Aggregates;
 
-namespace Infrastructure.Repositories;
+namespace CurrencyParserService.Infrastructure.Repositories;
 
 public class CurrencyRepository(CurrencyDbContext currencyDbContext) : ICurrencyRepository
 {

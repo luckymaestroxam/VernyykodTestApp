@@ -1,9 +1,9 @@
-using Application.Interfaces;
-using Application.RequestHandlers.AddUserCurrency;
-using Application.RequestHandlers.GetUserCurrencies;
-using Application.RequestHandlers.RemoveUserCurrency;
+using FinanceService.Application.RequestHandlers.AddUserCurrency;
+using FinanceService.Application.RequestHandlers.GetUserCurrencies;
+using FinanceService.Application.RequestHandlers.RemoveUserCurrency;
+using Shared.Application.Interfaces;
 
-namespace Api.Startup;
+namespace FinanceService.Api.Startup;
 
 public static class StartupServices
 {

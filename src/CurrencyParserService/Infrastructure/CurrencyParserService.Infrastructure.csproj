@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Text.Encoding.CodePages"/>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL"/>
+    <PackageReference Include="EFCore.BulkExtensions"/>
+    <ProjectReference Include="..\..\Shared\Shared.Infrastructure\Shared.Infrastructure.csproj"/>
+    <ProjectReference Include="..\Application\CurrencyParserService.Application.csproj"/>
+  </ItemGroup>
+</Project>

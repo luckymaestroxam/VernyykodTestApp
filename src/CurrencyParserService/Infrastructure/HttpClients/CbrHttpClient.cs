@@ -1,12 +1,12 @@
 using System.Globalization;
 using System.Text;
 using System.Xml.Linq;
-using Application.Interfaces;
-using Domain.Aggregates;
-using Domain.ValueObjects;
-using Infrastructure.Options;
+using CurrencyParserService.Application.Interfaces;
+using CurrencyParserService.Infrastructure.Options;
+using Shared.Domain.Aggregates;
+using Shared.Domain.ValueObjects;
 
-namespace Infrastructure.HttpClients;
+namespace CurrencyParserService.Infrastructure.HttpClients;
 
 public class CbrHttpClient(HttpClient httpClient, CbrOptions cbrOptions) : IDailyRateProvider
 {

@@ -1,7 +1,8 @@
-using Application.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
+using Shared.Application.Exceptions;
+using UserService.Application.Exceptions;
 
-namespace Api.Startup;
+namespace UserService.Api.Startup;
 
 public static class StartupExceptionHandler
 {

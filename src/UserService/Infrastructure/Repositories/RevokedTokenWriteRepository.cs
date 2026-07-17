@@ -1,9 +1,9 @@
-using Application.Interfaces;
-using Domain.Aggregates;
-using Infrastructure.Mappers;
-using Infrastructure.Persistence;
+using Shared.Domain.Aggregates;
+using UserService.Application.Interfaces;
+using UserService.Infrastructure.Mappers;
+using UserService.Infrastructure.Persistence;
 
-namespace Infrastructure.Repositories;
+namespace UserService.Infrastructure.Repositories;
 
 public class RevokedTokenWriteRepository(UserWriteDbContext userWriteDbContext) : IRevokedTokenWriteRepository
 {

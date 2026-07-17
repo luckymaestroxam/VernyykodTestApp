@@ -1,4 +1,4 @@
-namespace Domain.ValueObjects;
+namespace UserService.Domain.ValueObjects;
 
 public sealed record UserName
 {

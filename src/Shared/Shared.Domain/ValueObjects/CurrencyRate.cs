@@ -1,4 +1,4 @@
-namespace Domain.ValueObjects;
+namespace Shared.Domain.ValueObjects;
 
 public sealed record CurrencyRate
 {

@@ -1,9 +1,9 @@
-using Application.Interfaces;
-using Application.Models;
-using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using UserService.Application.Interfaces;
+using UserService.Application.Models;
+using UserService.Infrastructure.Persistence;
 
-namespace Infrastructure.Repositories;
+namespace UserService.Infrastructure.Repositories;
 
 public class UserReadRepository(UserReadDbContext userReadDbContext) : IUserReadRepository
 {

@@ -1,9 +1,9 @@
-using Application.Interfaces;
-using Domain.Aggregates;
-using Infrastructure.Mappers;
-using Infrastructure.Persistence;
+using UserService.Application.Interfaces;
+using UserService.Domain.Aggregates;
+using UserService.Infrastructure.Mappers;
+using UserService.Infrastructure.Persistence;
 
-namespace Infrastructure.Repositories;
+namespace UserService.Infrastructure.Repositories;
 
 public class UserWriteRepository(UserWriteDbContext userWriteDbContext) : IUserWriteRepository
 {

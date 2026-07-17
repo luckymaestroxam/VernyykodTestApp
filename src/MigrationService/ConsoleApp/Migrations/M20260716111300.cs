@@ -1,6 +1,6 @@
 using FluentMigrator;
 
-namespace ConsoleApp.Migrations;
+namespace MigrationService.ConsoleApp.Migrations;
 
 [Migration(20260716111300, "Добавление таблицы revoked_token")]
 public class M20260716111300 : AutoReversingMigration

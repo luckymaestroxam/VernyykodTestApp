@@ -1,9 +1,9 @@
-using Application.Interfaces;
-using Domain.ValueObjects;
-using Infrastructure.Persistence;
+using FinanceService.Application.Interfaces;
+using FinanceService.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using Shared.Domain.ValueObjects;
 
-namespace Infrastructure.Repositories;
+namespace FinanceService.Infrastructure.Repositories;
 
 public class CurrencyReadRepository(FinanceServiceReadDbContext dbContext) : ICurrencyReadRepository
 {

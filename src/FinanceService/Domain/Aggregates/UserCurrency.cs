@@ -1,6 +1,6 @@
-using Domain.ValueObjects;
+using Shared.Domain.ValueObjects;
 
-namespace Domain.Aggregates;
+namespace FinanceService.Domain.Aggregates;
 
 public sealed record UserCurrency
 {

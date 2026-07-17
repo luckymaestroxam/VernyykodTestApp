@@ -1,4 +1,5 @@
-using Api.Startup;
+using Shared.Api.Startup;
+using UserService.Api.Startup;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.AddRepositories();

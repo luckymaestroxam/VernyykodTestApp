@@ -1,14 +1,14 @@
 using System.IdentityModel.Tokens.Jwt;
-using Application.Interfaces;
-using Infrastructure.Options;
-using Infrastructure.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Shared.Application.Interfaces;
+using Shared.Infrastructure.Options;
+using Shared.Infrastructure.Security;
 
-namespace Api.Startup;
+namespace Shared.Api.Startup;
 
 public static class StartupAuth
 {

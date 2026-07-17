@@ -1,7 +1,7 @@
-using Domain.Aggregates;
-using Infrastructure.Entities;
+using Shared.Domain.Aggregates;
+using Shared.Infrastructure.Entities;
 
-namespace Infrastructure.Mappers;
+namespace CurrencyParserService.Infrastructure.Mappers;
 
 internal static class CurrencyMapper
 {

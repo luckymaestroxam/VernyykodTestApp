@@ -1,7 +1,8 @@
-using Application.Interfaces;
-using Domain.ValueObjects;
+using Shared.Application.Interfaces;
+using UserService.Application.Interfaces;
+using UserService.Domain.ValueObjects;
 
-namespace Application.RequestHandlers.LoginUser;
+namespace UserService.Application.RequestHandlers.LoginUser;
 
 public class LoginUserRequestHandler(
     IUserReadRepository userReadRepository,

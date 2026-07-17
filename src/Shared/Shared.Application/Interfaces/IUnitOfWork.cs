@@ -1,4 +1,4 @@
-namespace Application.Interfaces;
+namespace Shared.Application.Interfaces;
 
 public interface IUnitOfWork
 {

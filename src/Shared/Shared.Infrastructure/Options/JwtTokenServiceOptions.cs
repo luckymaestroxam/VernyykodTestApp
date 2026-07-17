@@ -1,3 +1,3 @@
-namespace Infrastructure.Options;
+namespace Shared.Infrastructure.Options;
 
 public sealed record JwtTokenServiceOptions(string SymmetricSecurityKey, string Issuer, int ExpiresTokenInHours);

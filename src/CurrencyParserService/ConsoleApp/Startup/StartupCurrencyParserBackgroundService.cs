@@ -1,8 +1,8 @@
-using ConsoleApp.BackgroundServices;
+using CurrencyParserService.ConsoleApp.BackgroundServices;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ConsoleApp.Startup;
+namespace CurrencyParserService.ConsoleApp.Startup;
 
 public static class StartupCurrencyParserBackgroundService
 {

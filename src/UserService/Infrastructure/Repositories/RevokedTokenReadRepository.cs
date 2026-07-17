@@ -1,8 +1,8 @@
-using Application.Interfaces;
-using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using Shared.Application.Interfaces;
+using UserService.Infrastructure.Persistence;
 
-namespace Infrastructure.Repositories;
+namespace UserService.Infrastructure.Repositories;
 
 public class RevokedTokenReadRepository(UserReadDbContext userReadDbContext) : IRevokedTokenReadRepository
 {

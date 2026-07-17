@@ -1,9 +1,11 @@
-using Application.Interfaces;
-using Infrastructure.Configurations;
-using Infrastructure.Entities;
+using FinanceService.Infrastructure.Configurations;
+using FinanceService.Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
+using Shared.Application.Interfaces;
+using Shared.Infrastructure.Configurations;
+using Shared.Infrastructure.Persistence;
 
-namespace Infrastructure.Persistence;
+namespace FinanceService.Infrastructure.Persistence;
 
 public class FinanceServiceWriteDbContext(DbContextOptions<FinanceServiceWriteDbContext> options)
     : DbContext(options), IUnitOfWork

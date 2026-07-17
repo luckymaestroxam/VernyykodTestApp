@@ -1,9 +1,10 @@
-using Application.Exceptions;
-using Application.Interfaces;
-using Domain.Aggregates;
-using Domain.ValueObjects;
+using FinanceService.Application.Exceptions;
+using FinanceService.Application.Interfaces;
+using FinanceService.Domain.Aggregates;
+using Shared.Application.Interfaces;
+using Shared.Domain.ValueObjects;
 
-namespace Application.RequestHandlers.RemoveUserCurrency;
+namespace FinanceService.Application.RequestHandlers.RemoveUserCurrency;
 
 public class RemoveUserCurrencyRequestHandler(
     ICurrencyReadRepository currencyReadRepository,

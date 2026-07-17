@@ -1,3 +1,3 @@
-namespace Infrastructure.Entities;
+namespace Shared.Infrastructure.Entities;
 
 public sealed record RevokedTokenEntity(Guid Jti, DateTime RevokedAt);

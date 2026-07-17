@@ -1,10 +1,10 @@
-using Application.Interfaces;
-using Infrastructure.HttpClients;
-using Infrastructure.Options;
+using CurrencyParserService.Application.Interfaces;
+using CurrencyParserService.Infrastructure.HttpClients;
+using CurrencyParserService.Infrastructure.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ConsoleApp.Startup;
+namespace CurrencyParserService.ConsoleApp.Startup;
 
 public static class StartupCbrHttpClient
 {

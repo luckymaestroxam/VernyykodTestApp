@@ -1,7 +1,7 @@
-using Domain.Aggregates;
-using Infrastructure.Entities;
+using FinanceService.Domain.Aggregates;
+using FinanceService.Infrastructure.Entities;
 
-namespace Infrastructure.Mappers;
+namespace FinanceService.Infrastructure.Mappers;
 
 internal static class UserCurrencyMapper
 {

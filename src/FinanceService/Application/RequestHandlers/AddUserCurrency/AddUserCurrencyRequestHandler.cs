@@ -1,9 +1,11 @@
-using Application.Exceptions;
-using Application.Interfaces;
-using Domain.Aggregates;
-using Domain.ValueObjects;
+using FinanceService.Application.Exceptions;
+using FinanceService.Application.Interfaces;
+using FinanceService.Domain.Aggregates;
+using Shared.Application.Exceptions;
+using Shared.Application.Interfaces;
+using Shared.Domain.ValueObjects;
 
-namespace Application.RequestHandlers.AddUserCurrency;
+namespace FinanceService.Application.RequestHandlers.AddUserCurrency;
 
 public class AddUserCurrencyRequestHandler(
     ICurrencyReadRepository currencyReadRepository,

@@ -1,6 +1,6 @@
 using FluentMigrator;
 
-namespace ConsoleApp.Migrations;
+namespace MigrationService.ConsoleApp.Migrations;
 
 [Migration(20260715173500, "Добавление таблиц currency, user, user_currency")]
 public class M20260715173500 : AutoReversingMigration

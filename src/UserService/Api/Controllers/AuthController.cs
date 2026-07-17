@@ -1,11 +1,11 @@
-using Application.Interfaces;
-using Application.RequestHandlers.LoginUser;
-using Application.RequestHandlers.LogoutUser;
-using Application.RequestHandlers.RegisterUser;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Shared.Application.Interfaces;
+using UserService.Application.RequestHandlers.LoginUser;
+using UserService.Application.RequestHandlers.LogoutUser;
+using UserService.Application.RequestHandlers.RegisterUser;
 
-namespace Api.Controllers;
+namespace UserService.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

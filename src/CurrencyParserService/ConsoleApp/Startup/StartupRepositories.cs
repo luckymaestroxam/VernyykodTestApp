@@ -1,11 +1,11 @@
-using Application.Interfaces;
-using Infrastructure.Persistence;
-using Infrastructure.Repositories;
+using CurrencyParserService.Application.Interfaces;
+using CurrencyParserService.Infrastructure.Persistence;
+using CurrencyParserService.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ConsoleApp.Startup;
+namespace CurrencyParserService.ConsoleApp.Startup;
 
 public static class StartupRepositories
 {

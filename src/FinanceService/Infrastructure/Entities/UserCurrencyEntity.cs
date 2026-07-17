@@ -1,4 +1,6 @@
-namespace Infrastructure.Entities;
+using Shared.Infrastructure.Entities;
+
+namespace FinanceService.Infrastructure.Entities;
 
 public sealed record UserCurrencyEntity(Guid UserId, string CurrencyId)
 {

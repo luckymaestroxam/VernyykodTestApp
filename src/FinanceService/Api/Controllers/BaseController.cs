@@ -1,7 +1,7 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Api.Controllers;
+namespace FinanceService.Api.Controllers;
 
 public class BaseController : ControllerBase
 {

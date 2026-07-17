@@ -1,7 +1,7 @@
-using Infrastructure.Configurations;
 using Microsoft.EntityFrameworkCore;
+using Shared.Infrastructure.Configurations;
 
-namespace Infrastructure.Persistence;
+namespace CurrencyParserService.Infrastructure.Persistence;
 
 public class CurrencyDbContext(DbContextOptions<CurrencyDbContext> options) : DbContext(options)
 {

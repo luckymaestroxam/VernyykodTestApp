@@ -1,6 +1,7 @@
-using Application.Interfaces;
+using FinanceService.Application.Interfaces;
+using Shared.Application.Interfaces;
 
-namespace Application.RequestHandlers.GetUserCurrencies;
+namespace FinanceService.Application.RequestHandlers.GetUserCurrencies;
 
 public class GetUserCurrenciesRequestHandler(IUserCurrencyReadRepository userCurrencyReadRepository)
     : IRequestHandler<GetUserCurrenciesRequest, GetUserCurrenciesResponse>

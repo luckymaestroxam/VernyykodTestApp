@@ -1,9 +1,10 @@
-using Application.Interfaces;
-using Infrastructure.Persistence;
-using Infrastructure.Repositories;
+using FinanceService.Application.Interfaces;
+using FinanceService.Infrastructure.Persistence;
+using FinanceService.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Shared.Application.Interfaces;
 
-namespace Api.Startup;
+namespace FinanceService.Api.Startup;
 
 public static class StartupRepositories
 {

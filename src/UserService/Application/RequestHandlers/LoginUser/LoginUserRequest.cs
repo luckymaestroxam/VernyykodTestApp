@@ -1,3 +1,3 @@
-namespace Application.RequestHandlers.LoginUser;
+namespace UserService.Application.RequestHandlers.LoginUser;
 
 public sealed record LoginUserRequest(string Name, string Password);

@@ -1,8 +1,8 @@
 using System.Text;
-using Infrastructure.Options;
 using Microsoft.IdentityModel.Tokens;
+using Shared.Infrastructure.Options;
 
-namespace Infrastructure.Security;
+namespace Shared.Infrastructure.Security;
 
 public static class JwtTokenValidation
 {

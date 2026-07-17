@@ -1,6 +1,6 @@
-using Domain.ValueObjects;
+using Shared.Domain.ValueObjects;
 
-namespace Application.Interfaces;
+namespace FinanceService.Application.Interfaces;
 
 public interface ICurrencyReadRepository
 {

@@ -1,6 +1,6 @@
-using Domain.ValueObjects;
+using UserService.Domain.ValueObjects;
 
-namespace Domain.Aggregates;
+namespace UserService.Domain.Aggregates;
 
 public sealed record User
 {

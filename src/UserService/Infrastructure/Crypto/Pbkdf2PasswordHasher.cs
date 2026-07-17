@@ -1,9 +1,9 @@
 using System.Security.Cryptography;
 using System.Text;
-using Application.Interfaces;
-using Domain.ValueObjects;
+using UserService.Application.Interfaces;
+using UserService.Domain.ValueObjects;
 
-namespace Infrastructure.Crypto;
+namespace UserService.Infrastructure.Crypto;
 
 public class Pbkdf2PasswordHasher : IPasswordHasher, IPasswordVerifier
 {

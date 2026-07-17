@@ -1,6 +1,6 @@
-using Application.Models;
+using UserService.Application.Models;
 
-namespace Application.Interfaces;
+namespace UserService.Application.Interfaces;
 
 public interface IUserReadRepository
 {

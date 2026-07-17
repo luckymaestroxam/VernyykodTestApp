@@ -1,8 +1,8 @@
-using Application.Interfaces;
-using Infrastructure.Persistence;
+using FinanceService.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using Shared.Application.Interfaces;
 
-namespace Infrastructure.Repositories;
+namespace FinanceService.Infrastructure.Repositories;
 
 public class RevokedTokenReadRepository(FinanceServiceReadDbContext dbContext) : IRevokedTokenReadRepository
 {

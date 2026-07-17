@@ -1,8 +1,8 @@
-using Infrastructure.Entities;
+using FinanceService.Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Infrastructure.Configurations;
+namespace FinanceService.Infrastructure.Configurations;
 
 public sealed class UserCurrencyEntityConfiguration : IEntityTypeConfiguration<UserCurrencyEntity>
 {

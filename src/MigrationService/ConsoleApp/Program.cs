@@ -1,6 +1,6 @@
-﻿using ConsoleApp.Startup;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MigrationService.ConsoleApp.Startup;
 
 var configuration = new ConfigurationBuilder()
     .SetBasePath(AppContext.BaseDirectory)
@@ -13,4 +13,4 @@ await using var serviceProvider = new ServiceCollection()
     .BuildServiceProvider();
 await serviceProvider.MigrateDatabase(configuration);
 
-Console.WriteLine("Миграции успешно выполнены.");
+Console.WriteLine("�������� ������� ���������.");

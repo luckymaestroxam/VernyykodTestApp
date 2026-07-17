@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace Domain.ValueObjects;
+namespace Shared.Domain.ValueObjects;
 
 public sealed record CurrencyId
 {

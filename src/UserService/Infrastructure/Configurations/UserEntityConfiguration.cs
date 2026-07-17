@@ -1,8 +1,8 @@
-using Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using UserService.Infrastructure.Entities;
 
-namespace Infrastructure.Configurations;
+namespace UserService.Infrastructure.Configurations;
 
 internal sealed class UserEntityConfiguration : IEntityTypeConfiguration<UserEntity>
 {

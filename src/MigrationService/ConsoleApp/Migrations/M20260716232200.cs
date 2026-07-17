@@ -1,6 +1,6 @@
 using FluentMigrator;
 
-namespace ConsoleApp.Migrations;
+namespace MigrationService.ConsoleApp.Migrations;
 
 [Migration(20260716232200, "Увеличение точности курса валюты")]
 public class M20260716232200 : Migration

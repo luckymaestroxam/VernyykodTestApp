@@ -1,4 +1,4 @@
-﻿using ConsoleApp.Startup;
+using CurrencyParserService.ConsoleApp.Startup;
 using Microsoft.Extensions.Hosting;
 
 var host = Host.CreateDefaultBuilder(args)

@@ -1,8 +1,8 @@
-using Application.Interfaces;
+using CurrencyParserService.Application.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace ConsoleApp.BackgroundServices;
+namespace CurrencyParserService.ConsoleApp.BackgroundServices;
 
 public class CurrencyParserBackgroundService(
     IServiceScopeFactory scopeFactory,

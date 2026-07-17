@@ -1,6 +1,6 @@
-using Domain.Aggregates;
+using Shared.Domain.Aggregates;
 
-namespace Application.Interfaces;
+namespace CurrencyParserService.Application.Interfaces;
 
 public interface IDailyRateProvider
 {

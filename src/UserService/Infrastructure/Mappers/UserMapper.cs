@@ -1,7 +1,7 @@
-using Domain.Aggregates;
-using Infrastructure.Entities;
+using UserService.Domain.Aggregates;
+using UserService.Infrastructure.Entities;
 
-namespace Infrastructure.Mappers;
+namespace UserService.Infrastructure.Mappers;
 
 internal static class UserMapper
 {

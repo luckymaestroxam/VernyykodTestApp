@@ -1,6 +1,6 @@
-using Domain.Aggregates;
+using Shared.Domain.Aggregates;
 
-namespace Application.Interfaces;
+namespace UserService.Application.Interfaces;
 
 public interface IRevokedTokenWriteRepository
 {

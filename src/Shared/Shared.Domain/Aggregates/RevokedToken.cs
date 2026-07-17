@@ -1,4 +1,4 @@
-namespace Domain.Aggregates;
+namespace Shared.Domain.Aggregates;
 
 public sealed record RevokedToken
 {

@@ -1,9 +1,11 @@
-using Application.Exceptions;
-using Application.Interfaces;
-using Domain.Aggregates;
-using Domain.ValueObjects;
+using Shared.Application.Exceptions;
+using Shared.Application.Interfaces;
+using UserService.Application.Exceptions;
+using UserService.Application.Interfaces;
+using UserService.Domain.Aggregates;
+using UserService.Domain.ValueObjects;
 
-namespace Application.RequestHandlers.RegisterUser;
+namespace UserService.Application.RequestHandlers.RegisterUser;
 
 public class RegisterUserRequestHandler(
     IUserWriteRepository userWriteRepository,

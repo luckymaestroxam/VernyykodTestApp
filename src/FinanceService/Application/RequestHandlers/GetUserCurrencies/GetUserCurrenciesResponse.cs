@@ -1,5 +1,5 @@
-using Application.Models;
+using FinanceService.Application.Models;
 
-namespace Application.RequestHandlers.GetUserCurrencies;
+namespace FinanceService.Application.RequestHandlers.GetUserCurrencies;
 
 public sealed record GetUserCurrenciesResponse(UserCurrencyDto[] UserCurrencies);

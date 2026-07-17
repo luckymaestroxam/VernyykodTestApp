@@ -1,4 +1,5 @@
-using Api.Startup;
+using FinanceService.Api.Startup;
+using Shared.Api.Startup;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.AddRepositories();

@@ -1,6 +1,6 @@
-using Domain.Aggregates;
+using FinanceService.Domain.Aggregates;
 
-namespace Application.Interfaces;
+namespace FinanceService.Application.Interfaces;
 
 public interface IUserCurrencyWriteRepository
 {

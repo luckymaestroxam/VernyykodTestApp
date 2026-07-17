@@ -1,3 +1,3 @@
-namespace Application.Exceptions;
+namespace FinanceService.Application.Exceptions;
 
 public class CurrencyNotExistsException(string message) : Exception(message);

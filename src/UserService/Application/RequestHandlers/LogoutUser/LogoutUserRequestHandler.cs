@@ -1,8 +1,10 @@
-using Application.Exceptions;
-using Application.Interfaces;
-using Domain.Aggregates;
+using Shared.Application.Exceptions;
+using Shared.Application.Interfaces;
+using Shared.Domain.Aggregates;
+using UserService.Application.Exceptions;
+using UserService.Application.Interfaces;
 
-namespace Application.RequestHandlers.LogoutUser;
+namespace UserService.Application.RequestHandlers.LogoutUser;
 
 public class LogoutUserRequestHandler(
     IRevokedTokenWriteRepository revokedTokenWriteRepository,

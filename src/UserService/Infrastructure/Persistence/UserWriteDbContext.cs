@@ -1,9 +1,12 @@
-using Application.Interfaces;
-using Infrastructure.Configurations;
-using Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
+using Shared.Application.Interfaces;
+using Shared.Infrastructure.Configurations;
+using Shared.Infrastructure.Entities;
+using Shared.Infrastructure.Persistence;
+using UserService.Infrastructure.Configurations;
+using UserService.Infrastructure.Entities;
 
-namespace Infrastructure.Persistence;
+namespace UserService.Infrastructure.Persistence;
 
 public class UserWriteDbContext(DbContextOptions<UserWriteDbContext> options) : DbContext(options), IUnitOfWork
 {

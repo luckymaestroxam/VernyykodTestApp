@@ -1,9 +1,9 @@
-using Application.Interfaces;
-using Application.Models;
-using Infrastructure.Persistence;
+using FinanceService.Application.Interfaces;
+using FinanceService.Application.Models;
+using FinanceService.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Repositories;
+namespace FinanceService.Infrastructure.Repositories;
 
 public class UserCurrencyReadRepository(FinanceServiceReadDbContext dbContext) : IUserCurrencyReadRepository
 {

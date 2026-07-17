@@ -1,9 +1,10 @@
-using Application.Interfaces;
-using Infrastructure.Persistence;
-using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Shared.Application.Interfaces;
+using UserService.Application.Interfaces;
+using UserService.Infrastructure.Persistence;
+using UserService.Infrastructure.Repositories;
 
-namespace Api.Startup;
+namespace UserService.Api.Startup;
 
 public static class StartupRepositories
 {

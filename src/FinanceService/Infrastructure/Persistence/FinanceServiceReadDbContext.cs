@@ -1,8 +1,10 @@
-using Infrastructure.Configurations;
-using Infrastructure.Entities;
+using FinanceService.Infrastructure.Configurations;
+using FinanceService.Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
+using Shared.Infrastructure.Configurations;
+using Shared.Infrastructure.Entities;
 
-namespace Infrastructure.Persistence;
+namespace FinanceService.Infrastructure.Persistence;
 
 public class FinanceServiceReadDbContext(DbContextOptions<FinanceServiceReadDbContext> options) : DbContext(options)
 {

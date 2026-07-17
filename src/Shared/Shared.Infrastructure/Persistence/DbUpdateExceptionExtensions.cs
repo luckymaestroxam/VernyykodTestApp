@@ -1,8 +1,8 @@
-using Application.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
+using Shared.Application.Exceptions;
 
-namespace Infrastructure.Persistence;
+namespace Shared.Infrastructure.Persistence;
 
 public static class DbUpdateExceptionExtensions
 {

@@ -1,8 +1,8 @@
-using Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Shared.Infrastructure.Entities;
 
-namespace Infrastructure.Configurations;
+namespace Shared.Infrastructure.Configurations;
 
 public sealed class RevokedTokenEntityConfiguration : IEntityTypeConfiguration<RevokedTokenEntity>
 {

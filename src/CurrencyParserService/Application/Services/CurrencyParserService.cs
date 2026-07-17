@@ -1,6 +1,6 @@
-using Application.Interfaces;
+using CurrencyParserService.Application.Interfaces;
 
-namespace Application.Services;
+namespace CurrencyParserService.Application.Services;
 
 public class CurrencyParserService(
     IDailyRateProvider dailyRateProvider,

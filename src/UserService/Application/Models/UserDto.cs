@@ -1,3 +1,3 @@
-namespace Application.Models;
+namespace UserService.Application.Models;
 
 public sealed record UserDto(Guid Id, string Name, string PasswordHash);

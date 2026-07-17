@@ -1,6 +1,6 @@
-using Domain.Aggregates;
+using UserService.Domain.Aggregates;
 
-namespace Application.Interfaces;
+namespace UserService.Application.Interfaces;
 
 public interface IUserWriteRepository
 {

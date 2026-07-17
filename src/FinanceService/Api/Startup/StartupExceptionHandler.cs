@@ -1,7 +1,8 @@
-using Application.Exceptions;
+using FinanceService.Application.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
+using Shared.Application.Exceptions;
 
-namespace Api.Startup;
+namespace FinanceService.Api.Startup;
 
 public static class StartupExceptionHandler
 {

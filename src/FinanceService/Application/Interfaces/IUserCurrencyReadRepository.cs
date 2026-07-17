@@ -1,6 +1,6 @@
-using Application.Models;
+using FinanceService.Application.Models;
 
-namespace Application.Interfaces;
+namespace FinanceService.Application.Interfaces;
 
 public interface IUserCurrencyReadRepository
 {

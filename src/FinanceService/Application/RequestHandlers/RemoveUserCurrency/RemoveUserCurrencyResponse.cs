@@ -1,3 +1,3 @@
-namespace Application.RequestHandlers.RemoveUserCurrency;
+namespace FinanceService.Application.RequestHandlers.RemoveUserCurrency;
 
 public sealed record RemoveUserCurrencyResponse;

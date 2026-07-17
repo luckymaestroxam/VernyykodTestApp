@@ -1,6 +1,6 @@
-using Domain.ValueObjects;
+using UserService.Domain.ValueObjects;
 
-namespace Application.Interfaces;
+namespace UserService.Application.Interfaces;
 
 public interface IPasswordVerifier
 {

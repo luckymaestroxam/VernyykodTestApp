@@ -1,10 +1,10 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using Application.Interfaces;
-using Infrastructure.Options;
 using Microsoft.IdentityModel.Tokens;
+using Shared.Infrastructure.Options;
+using UserService.Application.Interfaces;
 
-namespace Infrastructure.Security;
+namespace UserService.Infrastructure.Security;
 
 public class JwtTokenService(JwtTokenServiceOptions options, TokenValidationParameters validationParameters)
     : ITokenService

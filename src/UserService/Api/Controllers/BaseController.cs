@@ -1,7 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Api.Controllers;
+namespace UserService.Api.Controllers;
 
 public class BaseController : ControllerBase
 {

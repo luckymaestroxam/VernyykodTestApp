@@ -1,11 +1,12 @@
-using Application.Interfaces;
-using Application.RequestHandlers.LoginUser;
-using Application.RequestHandlers.LogoutUser;
-using Application.RequestHandlers.RegisterUser;
-using Infrastructure.Crypto;
-using Infrastructure.Security;
+using Shared.Application.Interfaces;
+using UserService.Application.Interfaces;
+using UserService.Application.RequestHandlers.LoginUser;
+using UserService.Application.RequestHandlers.LogoutUser;
+using UserService.Application.RequestHandlers.RegisterUser;
+using UserService.Infrastructure.Crypto;
+using UserService.Infrastructure.Security;
 
-namespace Api.Startup;
+namespace UserService.Api.Startup;
 
 public static class StartupServices
 {

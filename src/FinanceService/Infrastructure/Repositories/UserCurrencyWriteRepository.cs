@@ -1,10 +1,10 @@
-using Application.Interfaces;
-using Domain.Aggregates;
-using Infrastructure.Mappers;
-using Infrastructure.Persistence;
+using FinanceService.Application.Interfaces;
+using FinanceService.Domain.Aggregates;
+using FinanceService.Infrastructure.Mappers;
+using FinanceService.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Repositories;
+namespace FinanceService.Infrastructure.Repositories;
 
 public class UserCurrencyWriteRepository(FinanceServiceWriteDbContext dbContext) : IUserCurrencyWriteRepository
 {
