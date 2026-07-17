@@ -25,7 +25,7 @@ public class UserCurrenciesController : BaseController
         return Ok(result);
     }
 
-    [HttpPost("currency/{currencyId}")]
+    [HttpPost("{currencyId}")]
     public async Task<IActionResult> Add(
         [FromServices] IRequestHandler<AddUserCurrencyRequest, AddUserCurrencyResponse> addUserCurrencyRequestHandler,
         [FromRoute] string currencyId, CancellationToken cancellationToken)
@@ -34,10 +34,10 @@ public class UserCurrenciesController : BaseController
 
         var result = await addUserCurrencyRequestHandler.Handle(request, cancellationToken);
 
-        return Created(string.Empty, result);
+        return Ok(result);
     }
 
-    [HttpDelete("currency/{currencyId}")]
+    [HttpDelete("{currencyId}")]
     public async Task<IActionResult> Remove(
         [FromServices]
         IRequestHandler<RemoveUserCurrencyRequest, RemoveUserCurrencyResponse> removeUserCurrencyRequestHandler,

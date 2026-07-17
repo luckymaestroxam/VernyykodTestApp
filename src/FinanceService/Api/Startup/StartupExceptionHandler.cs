@@ -14,6 +14,7 @@ public static class StartupExceptionHandler
                 context.Response.StatusCode = exception switch
                 {
                     DuplicateResourceException => StatusCodes.Status409Conflict,
+                    UserCurrencyAlreadyAddedException => StatusCodes.Status409Conflict,
                     CurrencyNotExistsException => StatusCodes.Status404NotFound,
                     ArgumentException => StatusCodes.Status400BadRequest,
                     UnauthorizedAccessException => StatusCodes.Status401Unauthorized,

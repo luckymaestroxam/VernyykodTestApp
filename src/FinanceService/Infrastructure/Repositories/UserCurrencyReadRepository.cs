@@ -1,6 +1,5 @@
 using Application.Interfaces;
 using Application.Models;
-using Infrastructure.Mappers;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,13 +7,9 @@ namespace Infrastructure.Repositories;
 
 public class UserCurrencyReadRepository(FinanceServiceReadDbContext dbContext) : IUserCurrencyReadRepository
 {
-    public async Task<UserCurrencyDto[]> GetMany(Guid userId, CancellationToken cancellationToken)
-    {
-        var userCurrenciesFromDb = await dbContext.UserCurrencies
-            .Include(u => u.Currency)
+    public Task<UserCurrencyDto[]> GetMany(Guid userId, CancellationToken cancellationToken) =>
+        dbContext.UserCurrencies
             .Where(u => u.UserId == userId)
-            .ToListAsync(cancellationToken);
-
-        return userCurrenciesFromDb.Select(u => u.ToDto()).ToArray();
-    }
+            .Select(u => new UserCurrencyDto(u.CurrencyId, u.Currency.Name, u.Currency.Rate))
+            .ToArrayAsync(cancellationToken);
 }
