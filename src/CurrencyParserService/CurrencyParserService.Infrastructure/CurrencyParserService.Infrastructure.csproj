@@ -5,9 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="System.Text.Encoding.CodePages"/>
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL"/>
-    <PackageReference Include="EFCore.BulkExtensions"/>
+    <PackageReference Include="EFCore.BulkExtensions.PostgreSql"/>
     <ProjectReference Include="..\..\Shared\Shared.Infrastructure\Shared.Infrastructure.csproj"/>
     <ProjectReference Include="..\CurrencyParserService.Application\CurrencyParserService.Application.csproj"/>
   </ItemGroup>
